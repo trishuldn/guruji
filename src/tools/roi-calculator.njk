@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+title: ROI Calculator — My Online Guruji
+---
+<h1>ROI Calculator</h1>
+<div class="grid" style="grid-template-columns:1fr 1fr">
+  <div class="card">
+    <label>Revenue (₹)<br><input id="rev" type="number" value="30000"></label>
+    <label>Cost (₹)<br><input id="cost" type="number" value="8000"></label>
+    <button class="btn" id="go">Calculate</button>
+  </div>
+  <div class="card"><h3>Result</h3><div id="out">ROI: —%</div></div>
+</div>
+<script>
+document.getElementById('go').onclick=()=>{const r=+rev.value||0,c=+cost.value||0;const x=c===0?100:((r-c)/Math.max(c,1))*100;out.textContent='ROI: '+x.toFixed(1)+'%';};
+</script>
