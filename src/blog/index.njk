@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+title: Blog — My Online Guruji
+---
+<h1>Latest Posts</h1>
+<div class="grid three">
+  {% for post in collections.posts or [] | reverse %}
+    <div class="card">
+      <div style="color:#94a3b8">{{ post.date | date("dd LLL yyyy") }}</div>
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <p style="color:#94a3b8">{{ post.data.description }}</p>
+      <a class="ghost" href="{{ post.url }}">Read →</a>
+    </div>
+  {% endfor %}
+</div>
