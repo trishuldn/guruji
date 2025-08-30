@@ -2,12 +2,6 @@
   command = "npx eleventy"
   publish = "_site"
 
-[dev]
-  command = "npx eleventy --serve"
-  port = 8888
-  publish = "_site"
-
-
 [functions]
 node_bundler = "esbuild"
 external_node_modules = []
