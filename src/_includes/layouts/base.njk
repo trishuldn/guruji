@@ -89,24 +89,25 @@ title: My Online Guruji — Learn, Automate, Earn
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-  document.querySelectorAll('.buy-btn').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const product = btn.dataset.product;
-      const res = await fetch('/api/create-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ product })
-      });
-      const data = await res.json();
-      const options = {
-        key: '{{ env.RAZORPAY_KEY_ID }}',
-        amount: data.amount,
-        currency: "INR",
-        name: "MyOnlineGuruji",
-        description: data.name,
-        order_id: data.id,
-        handler: function (response) {
-          alert("✅ Payment successful! Your download link will be emailed to you.");
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".buy-btn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const product = btn.dataset.product;
+        const res = await fetch("/api/create-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ product })
+        });
+        const data = await res.json();
+        const options = {
+          key: "{{ env.RAZORPAY_KEY_ID }}",
+          amount: data.amount,
+          currency: "INR",
+          name: "MyOnlineGuruji",
+          description: data.notes.product,
+          order_id: data.id,
+          handler: function () {
+            alert("✅ Payment successful! Your download link will be emailed.");
         }
       };
       const rzp = new Razorpay(options);
