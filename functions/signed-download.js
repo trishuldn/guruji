@@ -1,11 +1,11 @@
 const crypto = require("crypto");
 
 const products = {
-  students: "/static/products/AI_Prompt_Pack_Students.pdf",
-  freelancers: "/static/products/AI_Prompt_Pack_Freelancers.pdf",
-  smb: "/static/products/AI_Prompt_Pack_SMB.pdf",
-  career: "/static/products/AI_Prompt_Pack_Career.pdf",
-  mega: "/static/products/Mega_Pack_2025.zip"
+  students: "/products/AI_Prompt_Pack_Students.pdf",
+  freelancers: "/products/AI_Prompt_Pack_Freelancers.pdf",
+  smb: "/products/AI_Prompt_Pack_SMB.pdf",
+  career: "/products/AI_Prompt_Pack_Career.pdf",
+  mega: "/products/Mega_Pack_2025.zip"
 };
 
 function verifyToken(token, secret) {
