@@ -4,7 +4,7 @@
 
 [dev]
   command = "npx eleventy --serve"
-  port = 8888
+  port = 3999
   publish = "_site"
 
 
