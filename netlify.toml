@@ -1,6 +1,11 @@
 [build]
-command = "npm run build"
-publish = "_site"
+  command = "npx eleventy"
+  publish = "_site"
+
+[dev]
+  command = "npx eleventy --serve"
+  port = 8888
+  publish = "_site"
 
 
 [functions]
