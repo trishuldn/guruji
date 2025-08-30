@@ -5,23 +5,72 @@
   <title>{{ title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/styles.css">
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; background: #fff; color: #0f172a; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .nav a { margin: 0 0.75rem; text-decoration: none; font-weight: 500; color: #1e293b; }
+    .nav a:hover { color: #3b82f6; }
+    .btn { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    .btn:hover { opacity: 0.9; }
+    footer { background: #f1f5f9; padding: 2rem 0; margin-top: 3rem; }
+    footer .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    footer h4 { margin-bottom: 0.75rem; font-weight: 700; }
+    footer a { display: block; margin-bottom: 0.5rem; color: #475569; text-decoration: none; }
+    footer a:hover { color: #2563eb; }
+    .copyright { text-align: center; margin-top: 2rem; font-size: 0.875rem; color: #64748b; }
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <a href="/">MyOnlineGuruji</a>
-      <a href="/tools/">Tools</a>
-      <a href="/products/">Products</a>
-      <a href="/blog/">Blog</a>
-    </nav>
+  <!-- Header / Navbar -->
+  <header style="background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.05); position:sticky; top:0; z-index:50;">
+    <div class="container nav">
+      <div style="font-size:1.5rem; font-weight:800; color:#2563eb;">
+        <a href="/">MyOnlineGuruji</a>
+      </div>
+      <nav>
+        <a href="/tools/">Tools</a>
+        <a href="/products/">Products</a>
+        <a href="/blog/">Blog</a>
+        <a href="#newsletter" class="btn">Get Free Templates</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <!-- Main Content -->
+  <main class="container" style="padding:2rem 0;">
     {{ content | safe }}
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 MyOnlineGuruji.com — All rights reserved.</p>
+    <div class="container grid">
+      <div>
+        <h4>MyOnlineGuruji</h4>
+        <p style="color:#475569;">AI-powered tools, templates, and guides to help students, freelancers, and businesses grow.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/tools/">Free Tools</a>
+        <a href="/products/">Products</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="/refunds/">Refund Policy</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 MyOnlineGuruji.com — All rights reserved.
+    </div>
   </footer>
 
   <!-- Razorpay checkout script (global for all pages) -->
